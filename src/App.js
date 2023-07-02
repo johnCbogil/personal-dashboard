@@ -14,7 +14,7 @@ function App() {
         <Paper sx={{ m: 10 }} elevation={3}>
           <Box sx={{ display: 'flex', justifyContent: 'center' }}>
             {service === "image" ? (
-              <img src={xr} alt="xr" />
+              <img src={xr} alt="xr" style={{maxWidth: '100%', height: 'auto'}} />
             ) : (
               <Typography
                 sx={{ p: 5 }}
