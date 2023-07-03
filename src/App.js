@@ -18,10 +18,10 @@ function App() {
       <Grid container spacing={3}>
         <Grid item xs={6}>
           {serviceList.slice(0, 4).map((paper, index) => (
-            <Paper key={index} elevation={3} style={{ margin: '10px', padding: '20px' }}>
+            <Paper key={index} elevation={3} style={{ margin: '10px', padding: '20px', width: '25vh', height: '25vh' }}>
               <Typography
-                sx={{ p: 5 }}
-                variant="h2"
+                sx={{ p: 5, fontSize: '2.5vh' }} // adjust as needed
+                variant="body1"
                 dangerouslySetInnerHTML={{ __html: paper }}
               />
             </Paper>
@@ -29,10 +29,10 @@ function App() {
         </Grid>
         <Grid item xs={6}>
           {serviceList.slice(4).map((paper, index) => (
-            <Paper key={index} elevation={3} style={{ margin: '10px', padding: '20px' }}>
+            <Paper key={index} elevation={3} style={{ margin: '10px', padding: '20px', width: '25vh', height: '25vh' }}>
               <Typography
                 sx={{ p: 5 }}
-                variant="h2"
+                variant="body1"
                 dangerouslySetInnerHTML={{ __html: paper }}
               />
             </Paper>
