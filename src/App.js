@@ -1,30 +1,44 @@
 import xr from './xr.png';
-import { Box, Container, Paper, Typography } from '@mui/material';
+import { Grid, Container, Paper, Typography } from '@mui/material';
 
 const serviceList = [
   "422.61 ppm",
   "The ultimate, hidden truth of the world is that it is something that we make, and could just as easily make differently.<br><br>-David Graeber",
-  "image"
+  "image",
+  "Lorem ipsum dolor sit amet",
+  "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+  "12345 xyz",
+  "Sed ut perspiciatis unde omnis",
+  "Neque porro quisquam est"
 ];
 
 function App() {
   return (
     <Container>
-      {serviceList.map((service) => (
-        <Paper sx={{ m: 10 }} elevation={3}>
-          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-            {service === "image" ? (
-              <img src={xr} alt="xr" style={{maxWidth: '100%', height: 'auto'}} />
-            ) : (
+      <Grid container spacing={3}>
+        <Grid item xs={6}>
+          {serviceList.slice(0, 4).map((paper, index) => (
+            <Paper key={index} elevation={3} style={{ margin: '10px', padding: '20px' }}>
               <Typography
                 sx={{ p: 5 }}
                 variant="h2"
-                dangerouslySetInnerHTML={{ __html: service }}
+                dangerouslySetInnerHTML={{ __html: paper }}
               />
-            )}
-          </Box>
-        </Paper>
-      ))}
+            </Paper>
+          ))}
+        </Grid>
+        <Grid item xs={6}>
+          {serviceList.slice(4).map((paper, index) => (
+            <Paper key={index} elevation={3} style={{ margin: '10px', padding: '20px' }}>
+              <Typography
+                sx={{ p: 5 }}
+                variant="h2"
+                dangerouslySetInnerHTML={{ __html: paper }}
+              />
+            </Paper>
+          ))}
+        </Grid>
+      </Grid>
     </Container>
   );
 }
