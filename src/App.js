@@ -2,8 +2,8 @@ import xr from './xr.png';
 import { Box, Container, Paper, Typography } from '@mui/material';
 
 const serviceList = [
-  "Last Updated:<br>7/1/23 9:05pm",
-  "422.61 ppm", "The ultimate, hidden truth of the world is that it is something that we make, and could just as easily make differently.<br><br>-David Graeber",
+  "422.61 ppm",
+  "The ultimate, hidden truth of the world is that it is something that we make, and could just as easily make differently.<br><br>-David Graeber",
   "image"
 ];
 
