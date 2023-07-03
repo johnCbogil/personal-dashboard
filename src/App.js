@@ -1,5 +1,5 @@
 import xr from './xr.png';
-import { Grid, Container, Paper, Typography, createTheme, ThemeProvider } from '@mui/material';
+import { Grid, Container, Paper, Typography } from '@mui/material';
 
 const serviceList = [
   "422.61 ppm",
@@ -12,47 +12,32 @@ const serviceList = [
   "Neque porro quisquam est"
 ];
 
-const theme = createTheme();
-
-theme.typography.body1 = {
-  fontSize: '1.2rem',
-  '@media (min-width:600px)': {
-    fontSize: '1.5rem',
-  },
-};
-
-
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-
-    <Container>
-      <Grid container spacing={3}>
-        <Grid item xs={6}>
-          {serviceList.slice(0, 4).map((paper, index) => (
-            <Paper key={index} elevation={3} style={{ margin: '10px', padding: '20px', width: '25vh', height: '25vh' }}>
-              <Typography
-                // sx={{ p: 5, fontSize: '2.5vh' }} // adjust as needed
-                variant="body1"
-                dangerouslySetInnerHTML={{ __html: paper }}
-              />
-            </Paper>
-          ))}
+      <Container>
+        <Grid container spacing={3}>
+          <Grid item xs={6}>
+            {serviceList.slice(0, 4).map((paper, index) => (
+              <Paper key={index} elevation={3} style={{ margin: '10px', padding: '20px', width: '25vh', height: '25vh' }}>
+                <Typography
+                  variant="body1"
+                  dangerouslySetInnerHTML={{ __html: paper }}
+                />
+              </Paper>
+            ))}
+          </Grid>
+          <Grid item xs={6}>
+            {serviceList.slice(4).map((paper, index) => (
+              <Paper key={index} elevation={3} style={{ margin: '10px', padding: '20px', width: '25vh', height: '25vh' }}>
+                <Typography
+                  variant="body1"
+                  dangerouslySetInnerHTML={{ __html: paper }}
+                />
+              </Paper>
+            ))}
+          </Grid>
         </Grid>
-        <Grid item xs={6}>
-          {serviceList.slice(4).map((paper, index) => (
-            <Paper key={index} elevation={3} style={{ margin: '10px', padding: '20px', width: '25vh', height: '25vh' }}>
-              <Typography
-                // sx={{ p: 5 }}
-                variant="body1"
-                dangerouslySetInnerHTML={{ __html: paper }}
-              />
-            </Paper>
-          ))}
-        </Grid>
-      </Grid>
-    </Container>
-    </ThemeProvider>
+      </Container>
   );
 }
 
