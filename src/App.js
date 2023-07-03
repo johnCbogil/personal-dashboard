@@ -29,10 +29,14 @@ function App() {
           <Grid item xs={6}>
             {serviceList.slice(4).map((paper, index) => (
               <Paper key={index} elevation={3} style={{ margin: '10px', padding: '20px', width: '25vh', height: '25vh' }}>
-                <Typography
-                  variant="body1"
-                  dangerouslySetInnerHTML={{ __html: paper }}
-                />
+              {index == 0 ? (
+                <img src={xr} alt="" style={{maxWidth: '100%', maxHeight: '100%'}} />
+                ) : (
+                  <Typography
+                    variant="body1"
+                    dangerouslySetInnerHTML={{ __html: paper }}
+                  />
+                )}
               </Paper>
             ))}
           </Grid>
