@@ -1,5 +1,6 @@
 import { Grid, Container } from '@mui/material';
 import Tile from './Components/Tile';
+import C02Tile from './Components/C02Tile';
 
 const serviceList = [
   "422.61 ppm",
@@ -17,8 +18,12 @@ function App() {
     <Container>
       <Grid container spacing={3}>
         {serviceList.map((content, index) => (
-          <Grid item xs={12} sm={6} md={3} key={index}>
-            <Tile content={content} index={index}/>
+          <Grid item xs={6} key={index}>
+            {index == 0 ?
+              <C02Tile></C02Tile>
+              :
+              <Tile content={content} index={index} />
+            }
           </Grid>
         ))}
       </Grid>
