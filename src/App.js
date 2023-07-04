@@ -1,12 +1,12 @@
-import xr from './xr.png';
-import { Grid, Container, Paper, Typography } from '@mui/material';
+import { Grid, Container } from '@mui/material';
+import Tile from './Components/Tile';
 
 const serviceList = [
   "422.61 ppm",
   "The ultimate, hidden truth of the world is that it is something that we make, and could just as easily make differently.<br><br>-David Graeber",
-  "image",
   "Lorem ipsum dolor sit amet",
   "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+  "image",
   "12345 xyz",
   "Sed ut perspiciatis unde omnis",
   "Neque porro quisquam est"
@@ -14,34 +14,20 @@ const serviceList = [
 
 function App() {
   return (
-      <Container>
-        <Grid container spacing={3}>
-          <Grid item xs={6}>
-            {serviceList.slice(0, 4).map((paper, index) => (
-              <Paper key={index} elevation={3} style={{ margin: '10px', padding: '20px', width: '25vh', height: '25vh' }}>
-                <Typography
-                  variant="body1"
-                  dangerouslySetInnerHTML={{ __html: paper }}
-                />
-              </Paper>
-            ))}
-          </Grid>
-          <Grid item xs={6}>
-            {serviceList.slice(4).map((paper, index) => (
-              <Paper key={index} elevation={3} style={{ margin: '10px', padding: '20px', width: '25vh', height: '25vh' }}>
-              {index == 0 ? (
-                <img src={xr} alt="" style={{maxWidth: '100%', maxHeight: '100%'}} />
-                ) : (
-                  <Typography
-                    variant="body1"
-                    dangerouslySetInnerHTML={{ __html: paper }}
-                  />
-                )}
-              </Paper>
-            ))}
-          </Grid>
+    <Container>
+      <Grid container spacing={3}>
+        <Grid item>
+          {serviceList.slice(0, 4).map((content, index) => (
+            <Tile key={index} content={content} index={index}/>
+          ))}
         </Grid>
-      </Container>
+        <Grid item>
+          {serviceList.slice(4).map((content, index) => (
+            <Tile key={index} content={content} index={index}/>
+          ))}
+        </Grid>
+      </Grid>
+    </Container>
   );
 }
 
