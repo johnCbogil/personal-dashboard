@@ -6,7 +6,7 @@ const serviceList = [
   "422.61 ppm",
   "image",
   "The ultimate, hidden truth of the world is that it is something that we make, and could just as easily make differently.<br><br>-David Graeber",
-  "Lorem ipsum dolor sit amet",
+  "image",
   "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
   "12345 xyz",
   "Sed ut perspiciatis unde omnis",
